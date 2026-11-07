@@ -390,6 +390,44 @@
       border: 1px solid var(--border);
     }
 
+
+    .badge-premium {
+      color: #fff;
+      background: linear-gradient(135deg, #C45F28, #E07A3D);
+    }
+    .dl-card.premium {
+      border-color: rgba(196, 95, 40, 0.28);
+      background: linear-gradient(135deg, rgba(196, 95, 40, 0.05), rgba(255, 255, 255, 0.75));
+    }
+    .other-versions { margin-top: 1.15rem; }
+    .btn-other-versions {
+      width: 100%;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.9rem 1.2rem; font-size: 0.92rem; font-weight: 600;
+      color: var(--text-muted); background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-other-versions:hover {
+      color: var(--text); border-color: var(--border-strong); background: var(--surface-hover);
+    }
+    .btn-other-versions:active { transform: scale(0.985); }
+    .btn-other-versions .chevron { transition: transform 0.35s var(--ease); }
+    .btn-other-versions[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+    .btn-other-versions[aria-expanded="true"] {
+      color: var(--accent-dark); border-color: rgba(224, 122, 61, 0.3); background: var(--accent-soft);
+    }
+    .other-versions-panel {
+      overflow: hidden; max-height: 0; opacity: 0;
+      transition: max-height 0.5s var(--ease), opacity 0.4s var(--ease), margin 0.4s;
+      margin-top: 0;
+    }
+    .other-versions-panel.open {
+      max-height: 1400px; opacity: 1; margin-top: 1rem;
+    }
+    .other-grid { gap: 0.9rem; }
+
     /* DOWNLOAD */
     #download {
       background: linear-gradient(180deg, transparent, rgba(224, 122, 61, 0.04) 35%, transparent);
@@ -790,10 +828,10 @@
               <div class="dl-meta">
                 <span class="badge badge-rec">Recommended</span>
                 <span class="badge badge-platform">Android APK</span>
-                <span class="dl-ver">v5.0.0</span>
+                <span class="dl-ver">v5.0.0 Official</span>
               </div>
             </div>
-            <button class="btn-dl" type="button" data-url="https://github.com/aryaexeuyf/Image/releases/download/3.0.0/Levora_2026-5.0.0.recoedition.apk" data-name="VELORA-5.0.0-Recommended.apk">
+            <button class="btn-dl" type="button" data-url="https://github.com/aryaexeuyf/Image/releases/download/3.0.0/Levora_2026_5.0.0.official.apk" data-name="VELORA-5.0.0-Recommended.apk">
               <span class="btn-label">Download</span>
               <span class="countdown" aria-live="polite"></span>
               <span class="check" aria-hidden="true">
@@ -803,71 +841,103 @@
             <div class="dl-feedback" role="status"></div>
           </article>
 
-          <article class="dl-card reveal" data-version="4.3.2">
-            <div class="dl-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 00-.83.22l-1.88 3.24A11.457 11.457 0 0012 8.25c-1.73 0-3.37.38-4.47.91L5.65 5.67a.643.643 0 00-.83-.22c-.3.16-.42.54-.26.85l1.84 3.18C4.03 11.25 2.5 13.5 2.5 16.25h19c0-2.75-1.53-5-4.9-6.77zM7 14.25c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm10 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" fill="#9A8B7C"/></svg>
-            </div>
-            <div class="dl-info">
-              <h3>VELORA 4.3.2</h3>
-              <div class="dl-meta">
-                <span class="badge badge-stable">Stable</span>
-                <span class="badge badge-platform">Android APK</span>
-                <span class="dl-ver">v4.3.2</span>
-              </div>
-            </div>
-            <button class="btn-dl" type="button" data-url="https://github.com/aryaexeuyf/Image/releases/download/3.0.0/Levora_2026-4.3.2.stable.edition.apk" data-name="VELORA-4.3.2-Stable.apk">
-              <span class="btn-label">Download</span>
-              <span class="countdown" aria-live="polite"></span>
-              <span class="check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
-              </span>
-            </button>
-            <div class="dl-feedback" role="status"></div>
-          </article>
         </div>
 
-        <div class="win-block reveal">
-          <div class="platform-label" style="margin-bottom: 0.85rem;">
-            <span class="platform-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
-            </span>
-            <h3 class="platform-title">Windows / PC</h3>
-            <span class="platform-badge soon">Coming Soon</span>
-          </div>
-          <p class="win-note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-            Windows Version Is Currently Under Development
-          </p>
-          <div class="win-grid">
-            <div class="win-card">
-              <div class="win-card-top">
-                <div class="win-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
+        <div class="other-versions reveal">
+          <button type="button" class="btn-other-versions" id="btnOtherVersions" aria-expanded="false">
+            <span class="btn-other-text">Lihat versi lainnya</span>
+            <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="other-versions-panel" id="otherVersionsPanel">
+            <div class="download-grid other-grid">
+              <article class="dl-card" data-version="5.0.0-stable">
+                <div class="dl-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 00-.83.22l-1.88 3.24A11.457 11.457 0 0012 8.25c-1.73 0-3.37.38-4.47.91L5.65 5.67a.643.643 0 00-.83-.22c-.3.16-.42.54-.26.85l1.84 3.18C4.03 11.25 2.5 13.5 2.5 16.25h19c0-2.75-1.53-5-4.9-6.77zM7 14.25c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm10 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" fill="#9A8B7C"/></svg>
                 </div>
-                <div>
-                  <h3>VELORA Windows Installer</h3>
-                  <p class="fmt">Format: MSI · Status: Coming Soon</p>
+                <div class="dl-info">
+                  <h3>VELORA 5.0.0</h3>
+                  <div class="dl-meta">
+                    <span class="badge badge-stable">Stable</span>
+                    <span class="badge badge-platform">Android APK</span>
+                    <span class="dl-ver">v5.0.0 Stable</span>
+                  </div>
                 </div>
-              </div>
-              <span class="badge badge-soon">Coming Soon</span>
-              <div class="btn-disabled">Belum Tersedia</div>
+                <button class="btn-dl" type="button" data-url="https://github.com/aryaexeuyf/Image/releases/download/3.0.0/Levora_2026-4.3.2.stable.edition.apk" data-name="VELORA-5.0.0-Stable.apk">
+                  <span class="btn-label">Download</span>
+                  <span class="countdown" aria-live="polite"></span>
+                  <span class="check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                </button>
+                <div class="dl-feedback" role="status"></div>
+              </article>
+
+              <article class="dl-card premium" data-version="3.0.0-premium">
+                <div class="dl-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.8 5.6 21.2 8 14 2 9.2h7.6L12 2z" fill="#C45F28"/></svg>
+                </div>
+                <div class="dl-info">
+                  <h3>VELORA 3.0.0</h3>
+                  <div class="dl-meta">
+                    <span class="badge badge-premium">Premium</span>
+                    <span class="badge badge-platform">Android APK</span>
+                    <span class="dl-ver">Elegancy Edition</span>
+                  </div>
+                </div>
+                <button class="btn-dl" type="button" data-url="https://github.com/aryaexeuyf/Image/releases/download/3.0.0/Levora_2026_5.0.0.elagcy.apk" data-name="VELORA-3.0.0-Elegancy-Premium.apk">
+                  <span class="btn-label">Download</span>
+                  <span class="countdown" aria-live="polite"></span>
+                  <span class="check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                </button>
+                <div class="dl-feedback" role="status"></div>
+              </article>
             </div>
-            <div class="win-card">
-              <div class="win-card-top">
-                <div class="win-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
+
+            <div class="win-block" style="margin-top: 1.5rem;">
+              <div class="platform-label" style="margin-bottom: 0.85rem;">
+                <span class="platform-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
+                </span>
+                <h3 class="platform-title">Windows / PC</h3>
+                <span class="platform-badge soon">Coming Soon</span>
+              </div>
+              <p class="win-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                Windows Version Is Currently Under Development
+              </p>
+              <div class="win-grid">
+                <div class="win-card">
+                  <div class="win-card-top">
+                    <div class="win-icon">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
+                    </div>
+                    <div>
+                      <h3>VELORA Windows Installer</h3>
+                      <p class="fmt">Format: MSI · Status: Coming Soon</p>
+                    </div>
+                  </div>
+                  <span class="badge badge-soon">Coming Soon</span>
+                  <div class="btn-disabled">Belum Tersedia</div>
                 </div>
-                <div>
-                  <h3>VELORA Windows Application</h3>
-                  <p class="fmt">Format: EXE · Status: Coming Soon</p>
+                <div class="win-card">
+                  <div class="win-card-top">
+                    <div class="win-icon">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
+                    </div>
+                    <div>
+                      <h3>VELORA Windows Application</h3>
+                      <p class="fmt">Format: EXE · Status: Coming Soon</p>
+                    </div>
+                  </div>
+                  <span class="badge badge-soon">Coming Soon</span>
+                  <div class="btn-disabled">Belum Tersedia</div>
                 </div>
               </div>
-              <span class="badge badge-soon">Coming Soon</span>
-              <div class="btn-disabled">Belum Tersedia</div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <section id="support">
@@ -1007,7 +1077,7 @@
   <script>
     const CONFIG = {
       // Ganti username Telegram kamu di sini (contoh: "https://t.me/username")
-      telegram: "https://t.me/",
+      telegram: "https://t.me/RClCOMUNITYIOFFICIAL",
       whatsappDev: "https://wa.me/6281246679050",
       whatsappMaintainer: "https://wa.me/6281234200500",
       tiktok: "",
@@ -1056,7 +1126,7 @@
       const wa = document.getElementById("linkWhatsApp");
       const tt = document.getElementById("linkTikTok");
       // Direct links — no alerts
-      tg.href = CONFIG.telegram || "https://t.me/";
+      tg.href = CONFIG.telegram;
       wa.href = CONFIG.whatsappDev;
       if (CONFIG.tiktok) {
         tt.href = CONFIG.tiktok;
@@ -1083,10 +1153,83 @@
       }, 4200);
     })();
 
+    /* ========== SOUND (Web Audio) ========== */
+    const AudioFX = (function () {
+      let ctx = null;
+      function ensure() {
+        if (!ctx) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return null;
+          ctx = new AC();
+        }
+        if (ctx.state === "suspended") ctx.resume();
+        return ctx;
+      }
+      function tone(freq, dur, type, vol, slideTo) {
+        const c = ensure();
+        if (!c) return;
+        const t0 = c.currentTime;
+        const o = c.createOscillator();
+        const g = c.createGain();
+        o.type = type || "sine";
+        o.frequency.setValueAtTime(freq, t0);
+        if (slideTo) o.frequency.exponentialRampToValueAtTime(Math.max(slideTo, 1), t0 + dur);
+        g.gain.setValueAtTime(0.0001, t0);
+        g.gain.exponentialRampToValueAtTime(vol || 0.08, t0 + 0.012);
+        g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+        o.connect(g); g.connect(c.destination);
+        o.start(t0); o.stop(t0 + dur + 0.02);
+      }
+      function ui() {
+        tone(520, 0.09, "sine", 0.05, 280);
+        setTimeout(() => tone(380, 0.07, "triangle", 0.03, 220), 30);
+      }
+      function click() {
+        const c = ensure();
+        if (!c) return;
+        const t0 = c.currentTime;
+        const o = c.createOscillator();
+        const g = c.createGain();
+        o.type = "square";
+        o.frequency.setValueAtTime(1800, t0);
+        o.frequency.exponentialRampToValueAtTime(600, t0 + 0.04);
+        g.gain.setValueAtTime(0.0001, t0);
+        g.gain.exponentialRampToValueAtTime(0.055, t0 + 0.004);
+        g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.06);
+        o.connect(g); g.connect(c.destination);
+        o.start(t0); o.stop(t0 + 0.07);
+        tone(120, 0.05, "sine", 0.035, 80);
+      }
+      return { ui, click, ensure };
+    })();
+
+    document.addEventListener("pointerdown", () => AudioFX.ensure(), { once: true });
+
+    /* ========== OTHER VERSIONS ACCORDION ========== */
+    (function () {
+      const btn = document.getElementById("btnOtherVersions");
+      const panel = document.getElementById("otherVersionsPanel");
+      if (!btn || !panel) return;
+      btn.addEventListener("click", () => {
+        AudioFX.ui();
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        panel.classList.toggle("open", !open);
+        const label = btn.querySelector(".btn-other-text");
+        if (label) label.textContent = open ? "Lihat versi lainnya" : "Sembunyikan versi lain";
+      });
+    })();
+
+    document.querySelectorAll(".btn-primary, .btn-secondary, .btn-support, .btn-contact, .contact-btn, .nav a, .mobile-nav a, .menu-toggle").forEach(el => {
+      el.addEventListener("click", () => AudioFX.ui());
+    });
+
+    /* ========== DOWNLOAD SYSTEM ========== */
     document.querySelectorAll(".btn-dl").forEach(btn => {
       let busy = false;
       btn.addEventListener("click", () => {
         if (busy || btn.disabled) return;
+        AudioFX.click();
         const url = btn.dataset.url;
         const name = btn.dataset.name || "VELORA.apk";
         if (!url) return;
